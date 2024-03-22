@@ -13,3 +13,8 @@
     - name: Print host name 
       debug:
         msg: "{{ ansible_hostname }}"
+
+    - name: Print variable 
+      debug:
+        msg: "{{ test_var }}"
+      when: test_var is defined 
