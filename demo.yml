@@ -1,0 +1,15 @@
+---
+- name: Demo playbook 
+  hosts: all 
+  tasks:
+    - name: Print hello 
+      debug:
+        msg: "Hello world:
+
+    - name: Print facts
+      debug:
+        msg: "{{ ansible_facts }}"
+
+    - name: Print host name 
+      debug:
+        msg: "{{ ansible_hostname }}"
