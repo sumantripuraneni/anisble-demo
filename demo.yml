@@ -4,7 +4,7 @@
   tasks:
     - name: Print hello 
       debug:
-        msg: "Hello world:
+        msg: "Hello world"
 
     - name: Print facts
       debug:
