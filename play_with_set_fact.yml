@@ -1,0 +1,12 @@
+---
+- name: Demo playbook 
+  hosts: all 
+  tasks:
+
+    - name: Print hello 
+      debug:
+        msg: "Hello frpm play1a"
+
+    - name: Set secret  
+      set_fact:
+        my_secret: "secret"        

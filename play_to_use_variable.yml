@@ -1,0 +1,8 @@
+---
+- name: Demo playbook 
+  hosts: all 
+  tasks:
+
+    - name: Print hello 
+      debug:
+        msg: "{{ my_secret }}"
