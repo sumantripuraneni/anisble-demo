@@ -2,6 +2,12 @@
 - name: Demo playbook for vault 
   hosts: localhost 
   tasks:
-
+    - name: install hvac pip package
+      become: yes
+      become_method: sudo
+      pip:
+        name: hvac
+        state: present
+        
     - debug:
         msg: "{{ lookup('hashi_vault', 'secret=secret/data/test token=root url=http://vault-default.apps.cluster-gj9f5.gj9f5.sandbox1545.opentlc.com') }}"
