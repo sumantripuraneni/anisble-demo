@@ -1,7 +1,7 @@
 ---
 - name: Demo playbook for vault 
-  hosts: all 
+  hosts: localhost 
   tasks:
 
     - debug:
-        msg: "{{ lookup('community.general.hashi_vault', 'secret=secret/data/demo') }}"
+        msg: "{{ lookup('hashi_vault', 'secret=secret/data/test token=root url=http://vault-default.apps.cluster-gj9f5.gj9f5.sandbox1545.opentlc.com') }}"
