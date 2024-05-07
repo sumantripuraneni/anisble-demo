@@ -14,15 +14,13 @@
         name: hvac
         state: present
       
-    - name: Print the KV 
+    - name: Print the KV from vault
       debug:
         msg: "{{ lookup('hashi_vault', 'secret=secret/data/test') }}"
         
-    - name: Print value 
+    - name: Print the secret value only 
       debug:        
         msg: "{{ lookup('hashi_vault', 'secret=secret/data/test:what') }}"
-        #msg: "{{ lookup('hashi_vault', 'secret=secret/data/test token=root url=http://vault-default.apps.cluster-gj9f5.gj9f5.sandbox1545.opentlc.com') }}"
-
 
     - name: Set Stats  
       set_stats:
