@@ -8,6 +8,7 @@
       pip:
         name: hvac
         state: present
+      
         
     - debug:
-        msg: "{{ abc }}"
+        msg: "{{ lookup('hashi_vault', 'secret=secret/data/test') }}"
