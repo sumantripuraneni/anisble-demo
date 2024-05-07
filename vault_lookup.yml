@@ -10,4 +10,4 @@
         state: present
         
     - debug:
-        msg: "{{ lookup('hashi_vault', 'secret=secret/data/test:vault') }}"
+        msg: "{{ abc }}"
