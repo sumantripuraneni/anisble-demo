@@ -4,4 +4,4 @@
   tasks:
 
     - debug:
-        msg: "{{ lookup('hashi_vault', 'secret=secret/data/demo }}"
+        msg: "{{ lookup('hashi_vault', 'secret=secret/data/demo' }}"
