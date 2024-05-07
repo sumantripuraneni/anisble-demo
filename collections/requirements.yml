@@ -1,8 +1,5 @@
 ---
 collections:
-<<<<<<< HEAD
-  - name: community.general
-=======
   - name: community.hashi_vault
   - name: community.general
->>>>>>> 696861e (updated requirements.yml)
+
