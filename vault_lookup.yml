@@ -2,6 +2,11 @@
 - name: Demo playbook for vault 
   hosts: localhost 
   tasks:
+
+    - name: Print hello 
+      debug:
+        msg: "Hello from playbook with secrets"
+
     - name: install hvac pip package
       become: yes
       become_method: sudo
@@ -9,11 +14,18 @@
         name: hvac
         state: present
       
-        
     - name: Print the KV 
       debug:
         msg: "{{ lookup('hashi_vault', 'secret=secret/data/test') }}"
+        
     - name: Print value 
       debug:        
         msg: "{{ lookup('hashi_vault', 'secret=secret/data/test:what') }}"
         #msg: "{{ lookup('hashi_vault', 'secret=secret/data/test token=root url=http://vault-default.apps.cluster-gj9f5.gj9f5.sandbox1545.opentlc.com') }}"
+
+
+    - name: Set Stats  
+      set_stats:
+        data:
+          my_var: "not a secret"    
+          my_secret: "{{ lookup('hashi_vault', 'secret=secret/data/test:what') }}"
