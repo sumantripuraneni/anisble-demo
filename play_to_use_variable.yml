@@ -1,5 +1,5 @@
 ---
-- name: Demo playbook 
+- name:  Playbook to print variable and secret 
   hosts: all 
   tasks:
 
