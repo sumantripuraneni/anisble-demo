@@ -3,6 +3,11 @@
   hosts: all 
   tasks:
 
-    - name: Print hello 
+    - name: Print variable 
       debug:
-        msg: "{{ my_secret }}"
+        msg: "{{ my_var | default([]) }}"
+
+        
+    - name: Print secret 
+      debug:
+        msg: "{{ my_secret | default([]) }}"
