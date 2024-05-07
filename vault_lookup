@@ -1,7 +1,0 @@
----
-- name: Demo playbook for vault 
-  hosts: all 
-  tasks:
-
-    - debug:
-        msg: "{{ lookup('hashi_vault', 'secret=secret/data/demo }}"
