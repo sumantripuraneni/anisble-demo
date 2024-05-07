@@ -10,7 +10,10 @@
         state: present
       
         
-    - debug:
+    - name: Print the KV 
+      debug:
         msg: "{{ lookup('hashi_vault', 'secret=secret/data/test') }}"
+    - name: Print value 
+      debug:        
         msg: "{{ lookup('hashi_vault', 'secret=secret/data/test:what') }}"
         #msg: "{{ lookup('hashi_vault', 'secret=secret/data/test token=root url=http://vault-default.apps.cluster-gj9f5.gj9f5.sandbox1545.opentlc.com') }}"
