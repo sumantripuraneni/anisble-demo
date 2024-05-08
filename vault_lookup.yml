@@ -23,6 +23,7 @@
         msg: "{{ lookup('hashi_vault', 'secret=secret/data/test:what') }}"
 
     - name: Set Stats  
+      no_log: true
       set_stats:
         data:
           my_var: "not a secret"    
