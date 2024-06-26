@@ -14,6 +14,10 @@
       debug:
         msg: "{{ ansible_hostname }}"
 
+    - setup:
+
+    - debug: var=hostvars[inventory_hostname]
+
     - shell: hostname -i
 
     - name: Create a dummy file 
