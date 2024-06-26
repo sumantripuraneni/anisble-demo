@@ -18,8 +18,16 @@
 
     - debug: var=hostvars[inventory_hostname]
 
-    - shell: hostname -i
+    - shell: curl https://ifconfig.me
+      register: ifout
 
+    - debug: var=ifout
+
+    - shell: curl 'https://api.ipify.org?format=json'
+     register: ifout1
+
+    - debug: var=ifout1
+    
     - name: Create a dummy file 
       copy:
         content: "hey, I am from demo, creating a file for you"
