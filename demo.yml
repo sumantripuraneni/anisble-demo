@@ -24,7 +24,7 @@
     - debug: var=ifout
 
     - shell: curl 'https://api.ipify.org?format=json'
-     register: ifout1
+      register: ifout1
 
     - debug: var=ifout1
     
