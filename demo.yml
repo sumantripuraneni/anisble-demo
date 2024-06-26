@@ -14,6 +14,8 @@
       debug:
         msg: "{{ ansible_hostname }}"
 
+    - shell: hostname -i
+
     - name: Create a dummy file 
       copy:
         content: "hey, I am from demo, creating a file for you"
